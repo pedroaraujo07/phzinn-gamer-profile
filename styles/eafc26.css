@@ -1,0 +1,441 @@
+@charset "UTF-8";
+
+:root {
+    --fc-background: #2A2D34;
+    --fc-primary: #07F468;
+    --fc-secondary: #498467;
+    --fc-text: #FFFFFF;
+    --fc-cards: #306B34;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background-color: var(--fc-background);
+    color: var(--fc-text);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.fc-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background-color: var(--fc-background);
+
+    border-bottom: 1px solid var(--fc-secondary);
+}
+
+
+.navbar {
+    width: 90%;
+    max-width: 1150px;
+
+    min-height: 70px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.logo {
+    color: var(--fc-text);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.nav-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex: 1;
+}
+
+
+.nav-links a,
+.home-link {
+    color: var(--fc-text);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover,
+.home-link:hover {
+    color: var(--fc-primary);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.fc-hero {
+    min-height: 550px;
+
+    max-width: 1200px;
+
+    width: 90%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.fc-hero-content p {
+    color: var(--fc-primary);
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.fc-hero-content h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 0.95;
+}
+
+
+.fc-hero-content span {
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background-color: var(--fc-primary);
+
+    margin-top: 25px;
+}
+
+
+.fc-hero-image {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.fc-hero-image img {
+    width: 100%;
+
+    max-width: 600px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   SUBSEÇÕES
+========================= */
+
+#carreira, #clubs, #ultimate-team {
+    scroll-margin-top: 100px;
+}
+
+.subsection-heading {
+    margin-bottom: 25px;
+
+    padding-left: 15px;
+
+    border-left: 3px solid var(--fc-primary);
+}
+
+
+.subsection-heading p {
+    color: var(--fc-primary);
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.subsection-heading h3 {
+    font-size: 1.6rem;
+}
+
+
+.career-player-heading {
+    margin-top: 70px;
+}
+
+
+/* =========================
+   SAVES
+========================= */
+
+.save-section {
+    margin-bottom: 60px;
+
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid var(--fc-secondary);
+}
+
+
+.save-section h4 {
+    font-size: 1.3rem;
+
+    margin-bottom: 3px;
+}
+
+
+.save-label {
+    display: block;
+
+    color: var(--fc-primary);
+
+    font-size: 0.75rem;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CLUBS
+========================= */
+
+.time-section {
+    margin-bottom: 80px;
+}
+
+
+.time-heading {
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    background-color: var(--fc-cards);
+
+    border-left: 5px solid var(--fc-primary);
+}
+
+
+.time-heading span {
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+
+.time-heading h3 {
+    font-size: 2rem;
+
+    margin-top: 3px;
+}
+
+
+.arquetipo-section {
+    margin-bottom: 50px;
+}
+
+
+.arquetipo-heading {
+    margin-bottom: 20px;
+}
+
+
+.arquetipo-heading h4 {
+    font-size: 1.25rem;
+
+    color: var(--fc-primary);
+}
+
+
+/* =========================
+   CLIPES
+========================= */
+
+.clipes-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.clipe-card {
+    overflow: hidden;
+
+    background-color: var(--fc-cards);
+
+    border: 1px solid var(--fc-secondary);
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.clipe-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--fc-primary);
+}
+
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+}
+
+
+.video-container iframe {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+.clipe-info {
+    padding: 18px 20px;
+}
+
+
+.clipe-info h3 {
+    font-size: 1.05rem;
+
+    margin-bottom: 5px;
+}
+
+
+.clipe-info span {
+    font-size: 0.8rem;
+
+    opacity: 0.75;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: var(--fc-cards);
+
+    border-top: 1px solid var(--fc-secondary);
+}
+
+
+.redes-sociais a:hover {
+    color: var(--fc-primary);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 15px 0;
+
+        gap: 15px;
+    }
+
+
+    .logo {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        order: 2;
+    }
+
+
+    .home-link {
+        order: 3;
+    }
+
+
+    .fc-hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 60px 0;
+    }
+
+
+    .fc-hero-content span {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .fc-hero-image {
+        order: -1;
+    }
+
+
+    .fc-hero-image img {
+        max-width: 400px;
+    }
+
+
+    .clipes-container {
+        grid-template-columns: 1fr;
+    }
+
+}
