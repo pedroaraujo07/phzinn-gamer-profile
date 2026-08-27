@@ -1,0 +1,579 @@
+@charset "UTF-8";
+
+:root {
+    --rl-background: #0D1321;
+    --rl-primary: #3066BE;
+    --rl-secondary: #28C2FF;
+    --rl-text: #FFFAFF;
+    --rl-cards: #60AFFF;
+
+    --rl-dark: #080D17;
+    --rl-border: rgba(255, 250, 255, 0.12);
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+
+body {
+    background-color: var(--rl-background);
+    color: var(--rl-text);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.rl-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background-color: rgba(13, 19, 33, 0.95);
+
+    border-bottom: 1px solid var(--rl-border);
+}
+
+
+.navbar {
+    width: 90%;
+    max-width: 1150px;
+
+    min-height: 70px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.logo {
+    color: var(--rl-text);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.nav-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex: 1;
+}
+
+
+.nav-links a,
+.home-link {
+    color: var(--rl-text);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover,
+.home-link:hover {
+    color: var(--rl-secondary);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+
+.rl-intro {
+    min-height: 500px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    max-width: 1150px;
+
+    width: 90%;
+
+    margin: auto;
+}
+
+
+.rl-intro-text p {
+    color: var(--rl-secondary);
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.rl-intro-text h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1;
+}
+
+
+.rl-intro-text span {
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background-color: var(--rl-secondary);
+
+    border-radius: 10px;
+
+    margin-top: 25px;
+}
+
+
+.rl-intro-image {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.rl-intro-image img {
+    width: 100%;
+
+    max-width: 500px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   RANKS
+========================= */
+
+#ranks, #clipes, #carros, #mecanicas, #estatisticas {
+    scroll-margin-top: 80px;
+}
+
+
+.ranks-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.rank-card {
+    background-color: rgba(96, 175, 255, 0.08);
+
+    border: 1px solid var(--rl-border);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.rank-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--rl-secondary);
+}
+
+
+.rank-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 1rem;
+}
+
+
+.rank-card img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+
+.rank-card strong {
+    display: block;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 5px;
+}
+
+
+.rank-card span {
+    opacity: 0.65;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   CLIPES
+========================= */
+
+
+.clipes-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.clipe-card {
+    overflow: hidden;
+
+    background-color: rgba(96, 175, 255, 0.08);
+
+    border: 1px solid var(--rl-border);
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.clipe-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--rl-secondary);
+}
+
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+}
+
+
+.video-container iframe {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+.clipe-info {
+    padding: 18px 20px;
+}
+
+
+.clipe-info h3 {
+    font-size: 1.05rem;
+
+    margin-bottom: 5px;
+}
+
+
+.clipe-info span {
+    font-size: 0.85rem;
+
+    opacity: 0.65;
+}
+
+
+/* =========================
+   CARROS
+========================= */
+
+
+.carros-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.carro-card {
+    background-color: rgba(96, 175, 255, 0.08);
+
+    border: 1px solid var(--rl-border);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.carro-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--rl-secondary);
+}
+
+
+.carro-card img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+
+.carro-card h3 {
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   MECÂNICAS
+========================= */
+
+
+.mecanicas-container {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.mecanicas-container span {
+    padding: 12px 18px;
+
+    border: 1px solid var(--rl-border);
+
+    border-radius: 30px;
+
+    background-color: rgba(96, 175, 255, 0.08);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+
+.rl-stats-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--rl-border);
+
+    border-bottom: 1px solid var(--rl-border);
+}
+
+
+.rl-stats-container article {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--rl-border);
+}
+
+
+.rl-stats-container article:nth-child(3n) {
+    border-right: none;
+}
+
+
+.rl-stats-container strong {
+    display: block;
+
+    color: var(--rl-secondary);
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+    margin-bottom: 8px;
+}
+
+
+.rl-stats-container span {
+    font-size: 0.9rem;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+    background-color: var(--rl-dark);
+
+    border-top: 1px solid var(--rl-border);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 15px 0;
+
+        gap: 15px;
+    }
+
+
+    .logo {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        order: 2;
+    }
+
+
+    .home-link {
+        order: 3;
+    }
+
+
+    .rl-intro {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 70px 0;
+    }
+
+
+    .rl-intro-text span {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .rl-intro-image {
+        order: -1;
+    }
+
+
+    .rl-intro-image img {
+        max-width: 350px;
+    }
+
+
+    .ranks-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .carros-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .clipes-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ranks-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .carros-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rl-stats-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rl-stats-container article {
+        border-right: none;
+
+        border-bottom: 1px solid var(--rl-border);
+    }
+
+
+    .rl-stats-container article:last-child {
+        border-bottom: none;
+    }
+
+
+    #ranks, #clipes, #carros, #mecanicas, #estatisticas {
+    scroll-margin-top: 100px;
+}
+
+}
