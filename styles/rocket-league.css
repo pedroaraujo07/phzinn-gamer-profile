@@ -530,6 +530,10 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .clipes-container {
+        grid-template-columns: 1fr;
+    }
+
 
     .carros-container {
         grid-template-columns: repeat(2, 1fr);
@@ -540,9 +544,7 @@ footer {
 
 @media (max-width: 600px) {
 
-    .clipes-container {
-        grid-template-columns: 1fr;
-    }
+    
 
 
     .ranks-container {
