@@ -161,71 +161,12 @@ body {
 
 
 /* =========================
-   SUBSEÇÕES
+   SEÇÕES
 ========================= */
 
-#carreira, #clubs, #ultimate-team {
+#clubs,
+#ultimate-team {
     scroll-margin-top: 100px;
-}
-
-.subsection-heading {
-    margin-bottom: 25px;
-
-    padding-left: 15px;
-
-    border-left: 3px solid var(--fc-primary);
-}
-
-
-.subsection-heading p {
-    color: var(--fc-primary);
-
-    font-size: 0.75rem;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-
-.subsection-heading h3 {
-    font-size: 1.6rem;
-}
-
-
-.career-player-heading {
-    margin-top: 70px;
-}
-
-
-/* =========================
-   SAVES
-========================= */
-
-.save-section {
-    margin-bottom: 60px;
-
-    padding-bottom: 40px;
-
-    border-bottom: 1px solid var(--fc-secondary);
-}
-
-
-.save-section h4 {
-    font-size: 1.3rem;
-
-    margin-bottom: 3px;
-}
-
-
-.save-label {
-    display: block;
-
-    color: var(--fc-primary);
-
-    font-size: 0.75rem;
-
-    margin-bottom: 20px;
 }
 
 
