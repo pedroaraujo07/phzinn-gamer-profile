@@ -8,6 +8,7 @@
     --cards: #171f2b;           /* Um tom acima do fundo, mantendo a sobriedade */
 
     --dark: #0a0d13;            /* Azul quase preto para rodapé ou áreas profundas */
+    --dark2: #0a0d135a;
     --border: #232f41;          /* Bordas sutis que integram perfeitamente os cards */
 
     --overlay-dark: rgba(15, 20, 28, 0.88);
@@ -167,7 +168,11 @@ section {
 .section-heading h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
 
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
 }
 
 
@@ -229,6 +234,26 @@ section {
     transform: scale(1.04);
 }
 
+.jogo-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-color: var(--overlay-light);
+
+    opacity: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+.jogo-card:hover::before {
+    opacity: 1;
+}
 
 .jogo-card::after {
     content: "";
@@ -261,11 +286,15 @@ section {
 
 
 .jogo-info h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+
+    font-weight: 700;
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 
@@ -289,6 +318,12 @@ section {
     text-align: center;
 
     border-right: 1px solid var(--border);
+
+    transition: transform 0.3s ease;
+}
+
+.estatistica:hover {
+    transform: translateY(-3px);
 }
 
 
@@ -302,16 +337,22 @@ section {
 
     color: var(--secondary);
 
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+
+    font-weight: 700;
 
     line-height: 1;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 
 .estatistica span {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+
+    opacity: 0.75;
 }
 
 
@@ -339,9 +380,13 @@ footer {
 
 
 .footer-content h2 {
+    font-family: "Space Grotesk", sans-serif;
+
     margin-bottom: 25px;
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
 }
@@ -374,9 +419,17 @@ footer {
 
 
 .footer-content p {
-    opacity: 0.6;
+    opacity: 0.5;
 
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+
+    letter-spacing: 0.5px;
+}
+
+.jogo-card:focus-visible, .redes-sociais a:focus-visible {
+    outline: 2px solid var(--secondary);
+
+    outline-offset: 4px;
 }
 
 
