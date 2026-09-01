@@ -1,11 +1,13 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --fc-background: #2A2D34;
+    --fc-background: #151616;
     --fc-primary: #07F468;
     --fc-secondary: #498467;
     --fc-text: #FFFFFF;
     --fc-cards: #306B34;
+    --header: rgba(21, 22, 22, 0.92);
 }
 
 
@@ -16,6 +18,38 @@
 body {
     background-color: var(--fc-background);
     color: var(--fc-text);
+
+    font-family: "Inter", sans-serif;
+}
+
+#start {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================
+   FONTES
+========================= */
+
+
+.fc-hero-content h1, .section-heading h2, .subsection-heading h3, .time-heading h3, .arquetipo-heading h4 {
+    font-family: "Archivo", sans-serif;
+}
+
+.section-heading h2,
+.subsection-heading h3,
+.time-heading h3 {
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    font-family: "Archivo", sans-serif;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    line-height: 1.1;
 }
 
 
@@ -28,9 +62,11 @@ body {
     top: 0;
     z-index: 10;
 
-    background-color: var(--fc-background);
+    background-color: var(--header);
 
     border-bottom: 1px solid var(--fc-secondary);
+
+    backdrop-filter: blur(10px);
 }
 
 
@@ -54,9 +90,18 @@ body {
 
     text-decoration: none;
 
-    font-weight: bold;
+    font-family: "Archivo", sans-serif;
 
-    letter-spacing: 1px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    transition: color 0.3s ease;
+}
+
+
+.logo:hover {
+    color: var(--fc-primary);
 }
 
 
@@ -73,6 +118,8 @@ body {
 
 .nav-links a,
 .home-link {
+    position: relative;
+
     color: var(--fc-text);
 
     text-decoration: none;
@@ -80,6 +127,29 @@ body {
     font-size: 0.9rem;
 
     transition: color 0.3s ease;
+}
+
+.nav-links a::after,
+.home-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--fc-primary);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after,
+.home-link:hover::after {
+    width: 100%;
 }
 
 
@@ -104,7 +174,7 @@ body {
 
     display: grid;
 
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1fr 1.1fr;
 
     align-items: center;
 
@@ -117,41 +187,71 @@ body {
 
     font-size: 0.8rem;
 
-    font-weight: bold;
+    font-weight: 700;
 
     letter-spacing: 3px;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 
 .fc-hero-content h1 {
-    font-size: clamp(2.8rem, 6vw, 4.9rem);
+    font-size: clamp(2.8rem, 5.8vw, 4.9rem);
 
-    line-height: 0.95;
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
 }
 
 
 .fc-hero-content span {
     display: block;
 
-    width: 70px;
+    width: 85px;
     height: 4px;
 
     background-color: var(--fc-primary);
 
-    margin-top: 25px;
+    border-radius: 10px;
+
+    margin-top: 28px;
 }
 
 
 .fc-hero-image {
+    position: relative;
+
     display: flex;
 
     justify-content: center;
 }
 
+.fc-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(
+        circle,
+        rgba(7, 244, 104, 0.18) 0%,
+        rgba(7, 244, 104, 0.08) 35%,
+        transparent 55%
+    );
+
+    pointer-events: none;
+}
+
 
 .fc-hero-image img {
+    position: relative;
+
+    z-index: 1;
+
     width: 100%;
 
     max-width: 450px;
@@ -167,6 +267,25 @@ body {
 #clubs,
 #ultimate-team {
     scroll-margin-top: 100px;
+}
+
+#ultimate-team {
+    position: relative;
+
+    padding-top: 20px;
+}
+
+#ultimate-team .section-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    background-color: var(--fc-primary);
+
+    margin-top: 12px;
 }
 
 
@@ -207,19 +326,31 @@ body {
 
 
 .arquetipo-section {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
+
+    padding-left: 20px;
+
+    border-left: 1px solid var(--fc-secondary);
 }
 
 
 .arquetipo-heading {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 
 .arquetipo-heading h4 {
-    font-size: 1.25rem;
+    display: inline-block;
 
     color: var(--fc-primary);
+
+    font-family: "Archivo", sans-serif;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
 
 
@@ -247,7 +378,8 @@ body {
 
     transition:
         transform 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -255,6 +387,8 @@ body {
     transform: translateY(-5px);
 
     border-color: var(--fc-primary);
+
+    box-shadow: 0 12px 30px rgba(7, 244, 104, 0.08);
 }
 
 
