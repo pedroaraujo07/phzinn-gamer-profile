@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 :root {
     --rl-background: #0D1321;
@@ -20,6 +21,18 @@
 body {
     background-color: var(--rl-background);
     color: var(--rl-text);
+
+    font-family: "Inter", Arial, sans-serif;
+}
+
+
+/* =========================
+   FONTES
+========================= */
+
+
+.rl-intro-text h1, .section-heading h2, .rank-card h3, .clipe-info h3, .footer-content h2, .rank-card strong, .rl-stats-container strong {
+    font-family: "Rajdhani", Arial, sans-serif;
 }
 
 
@@ -93,6 +106,10 @@ body {
     color: var(--rl-secondary);
 }
 
+#start {
+    scroll-margin-top: 70px;
+}
+
 
 /* =========================
    INTRO
@@ -100,6 +117,8 @@ body {
 
 
 .rl-intro {
+    position: relative;
+
     min-height: 500px;
 
     display: grid;
@@ -115,6 +134,23 @@ body {
     width: 90%;
 
     margin: auto;
+}
+
+.rl-intro::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -50px;
+
+    background: radial-gradient(circle,rgba(40, 194, 255, 0.14), transparent 70%);
+
+    pointer-events: none;
+
+    z-index: -1;
 }
 
 
@@ -187,6 +223,8 @@ body {
 
 
 .rank-card {
+    position: relative;
+
     background-color: rgba(96, 175, 255, 0.08);
 
     border: 1px solid var(--rl-border);
@@ -197,9 +235,31 @@ body {
 
     text-align: center;
 
+    overflow: hidden;
+
     transition:
         transform 0.3s ease,
         border-color 0.3s ease;
+}
+
+.rank-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(40, 194, 255, 0.08),
+        transparent 50%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.1s ease;
+
+    pointer-events: none;
 }
 
 
@@ -207,6 +267,10 @@ body {
     transform: translateY(-5px);
 
     border-color: var(--rl-secondary);
+}
+
+.rank-card:hover::before {
+    opacity: 1;
 }
 
 
@@ -223,7 +287,13 @@ body {
 
     object-fit: contain;
 
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+
+    transition: transform 0.3s ease;
+}
+
+.rank-card:hover img {
+    transform: scale(1.08);
 }
 
 
@@ -233,6 +303,8 @@ body {
     font-size: 1.2rem;
 
     margin-bottom: 5px;
+
+    color: var(--rl-secondary);
 }
 
 
@@ -240,6 +312,8 @@ body {
     opacity: 0.65;
 
     font-size: 0.85rem;
+
+    display: block;
 }
 
 
@@ -300,6 +374,7 @@ body {
 
 .clipe-info {
     padding: 18px 20px;
+    
 }
 
 
@@ -311,9 +386,15 @@ body {
 
 
 .clipe-info span {
-    font-size: 0.85rem;
+    display: inline-block;
 
-    opacity: 0.65;
+    color: var(--rl-secondary);
+
+    font-size: 0.8rem;
+
+    font-weight: 500;
+
+    opacity: 0.8;
 }
 
 
@@ -383,12 +464,12 @@ body {
 
     flex-wrap: wrap;
 
-    gap: 12px;
+    gap: 15px;
 }
 
 
 .mecanicas-container span {
-    padding: 12px 18px;
+    padding: 13px 20px;
 
     border: 1px solid var(--rl-border);
 
@@ -397,6 +478,19 @@ body {
     background-color: rgba(96, 175, 255, 0.08);
 
     font-size: 0.9rem;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.mecanicas-container span:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--rl-secondary);
+
+    color: var(--rl-secondary);
 }
 
 
@@ -435,7 +529,9 @@ body {
 
     color: var(--rl-secondary);
 
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+
+    font-weight: 700;
 
     line-height: 1;
 
@@ -444,9 +540,13 @@ body {
 
 
 .rl-stats-container span {
-    font-size: 0.9rem;
+    display: block;
+
+    font-size: 0.85rem;
 
     opacity: 0.7;
+
+    letter-spacing: 0.3px;
 }
 
 
@@ -476,7 +576,7 @@ footer {
 
         padding: 15px 0;
 
-        gap: 15px;
+        gap: 12px;
     }
 
 
@@ -484,13 +584,21 @@ footer {
         width: 100%;
 
         text-align: center;
+
+        flex-shrink: 0;
     }
 
 
     .nav-links {
+        display: flex;
+
+        justify-content: center;
+
         flex-wrap: wrap;
 
         gap: 15px;
+
+        flex: initial;
 
         order: 2;
     }
@@ -507,6 +615,15 @@ footer {
         text-align: center;
 
         padding: 70px 0;
+    }
+
+    .rl-intro::before {
+        width: 300px;
+        height: 300px;
+
+        right: 50%;
+
+        transform: translateX(50%);
     }
 
 
